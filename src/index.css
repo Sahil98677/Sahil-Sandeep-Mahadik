@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* ==========================================================================
+   Media Print Stylesheet - Resume & Clean Physical Printing
+   ========================================================================== */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  /* Reset all transitions, animations, and force full opacity */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    filter: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide interactive web components, navigation, floating buttons, forms, and dialog overlays */
+  #main-header,
+  header,
+  nav,
+  footer,
+  #scroll-to-top,
+  .scroll-to-top,
+  #btn-toggle-theme,
+  #btn-toggle-terminal,
+  #btn-edit-profile,
+  #btn-mobile-menu,
+  #hero-btn-copy-email,
+  #hero-btn-terminal,
+  form,
+  button,
+  .no-print,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Structural page breaks */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  p, ul, ol, dl {
+    orphans: 3;
+    widows: 3;
+  }
+
+  section,
+  article,
+  .break-inside-avoid,
+  .rounded-xl,
+  .rounded-2xl {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Layout adjustments for print */
+  #main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  section {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  section:last-of-type {
+    border-bottom: none !important;
+  }
+
+  /* Crisp borders on cards & badges */
+  .border,
+  .border-2,
+  .border-zinc-200,
+  .border-zinc-300,
+  .border-zinc-800 {
+    border-color: #d1d5db !important;
+    border-width: 1px !important;
+  }
+
+  /* Clean background tint for tags / badges */
+  .font-mono,
+  .rounded-full,
+  .rounded-md {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+  }
+
+  /* Links */
+  a {
+    color: #111827 !important;
+    text-decoration: none !important;
+  }
+
+  /* When Resume Modal is active, focus exclusively on the Resume canvas */
+  body:has([role="dialog"]) #main-header,
+  body:has([role="dialog"]) #main-content,
+  body:has([role="dialog"]) footer,
+  body:has([role="dialog"]) #scroll-to-top {
+    display: none !important;
+  }
+
+  [role="dialog"] {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  [role="dialog"] > div {
+    max-width: 100% !important;
+    max-height: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    margin: 0 !important;
+  }
+
+  [role="dialog"] .overflow-y-auto {
+    overflow: visible !important;
+    max-height: none !important;
+    padding: 0 !important;
+  }
+}
+

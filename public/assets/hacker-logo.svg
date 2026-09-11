@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="cyberBg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="55%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#030712" />
+    </radialGradient>
+
+    <!-- Emerald-Cyan Cyber Gradient -->
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Emerald Accent Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Cyber Plate Gradient -->
+    <linearGradient id="plateDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Soft Ambient Glow -->
+    <filter id="ambientGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container with Cyber Border -->
+  <rect width="512" height="512" rx="112" fill="url(#cyberBg)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="url(#neonGlow)" stroke-width="2" stroke-opacity="0.25" />
+
+  <!-- Subtle Cyber Grid in Background -->
+  <g opacity="0.08" stroke="#10b981" stroke-width="1">
+    <line x1="64" y1="0" x2="64" y2="512" />
+    <line x1="128" y1="0" x2="128" y2="512" />
+    <line x1="192" y1="0" x2="192" y2="512" />
+    <line x1="256" y1="0" x2="256" y2="512" />
+    <line x1="320" y1="0" x2="320" y2="512" />
+    <line x1="384" y1="0" x2="384" y2="512" />
+    <line x1="448" y1="0" x2="448" y2="512" />
+    <line x1="0" y1="64" x2="512" y2="64" />
+    <line x1="0" y1="128" x2="512" y2="128" />
+    <line x1="0" y1="192" x2="512" y2="192" />
+    <line x1="0" y1="256" x2="512" y2="256" />
+    <line x1="0" y1="320" x2="512" y2="320" />
+    <line x1="0" y1="384" x2="512" y2="384" />
+    <line x1="0" y1="448" x2="512" y2="448" />
+  </g>
+
+  <!-- Ambient Glow Behind Core Emblem -->
+  <circle cx="256" cy="246" r="130" fill="#10b981" opacity="0.12" filter="url(#ambientGlow)" />
+
+  <!-- Hexagonal / Shield Outer Cyber Perimeter -->
+  <polygon points="256,68 396,148 396,308 256,412 116,308 116,148"
+    fill="none"
+    stroke="url(#neonGlow)"
+    stroke-width="4"
+    stroke-linejoin="round"
+    stroke-dasharray="28 10 90 10 28 10"
+    opacity="0.75"
+    filter="url(#glowEffect)"
+  />
+
+  <!-- Circuit Trace Lines & Bus Nodes -->
+  <g stroke="#06b6d4" stroke-width="2.5" opacity="0.6" fill="none">
+    <!-- Top Left Trace -->
+    <polyline points="116,148 76,124 52,124" />
+    <circle cx="52" cy="124" r="4" fill="#06b6d4" />
+
+    <!-- Top Right Trace -->
+    <polyline points="396,148 436,124 460,124" />
+    <circle cx="460" cy="124" r="4" fill="#06b6d4" />
+
+    <!-- Mid Left Trace -->
+    <polyline points="116,228 72,228 54,246" />
+    <circle cx="54" cy="246" r="4" fill="#10b981" />
+
+    <!-- Mid Right Trace -->
+    <polyline points="396,228 440,228 458,246" />
+    <circle cx="458" cy="246" r="4" fill="#10b981" />
+
+    <!-- Bottom Center Trace -->
+    <polyline points="256,412 256,448 274,466" />
+    <circle cx="274" cy="466" r="4" fill="#06b6d4" />
+    <polyline points="256,448 238,466" />
+    <circle cx="238" cy="466" r="4" fill="#10b981" />
+  </g>
+
+  <!-- Inner Cyber Armor / Hooded Facet Plates -->
+  <polygon points="256,92 376,162 376,298 256,388 136,298 136,162"
+    fill="url(#plateDark)"
+    stroke="#1e293b"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+
+  <!-- Stealth Hacker Visor / Glitch Silhouette -->
+  <!-- Top Hood Ridge -->
+  <polygon points="256,108 356,168 328,212 256,172 184,212 156,168"
+    fill="#0f172a"
+    stroke="url(#emeraldGrad)"
+    stroke-width="2.5"
+  />
+
+  <!-- Glowing Cyber Eyes / Terminal Scanning Visor Slot -->
+  <polygon points="186,224 238,242 274,242 326,224 336,238 278,258 234,258 176,238"
+    fill="url(#neonGlow)"
+    filter="url(#glowEffect)"
+  />
+
+  <!-- Terminal Command Prompt & Cipher 'S' Core -->
+  <!-- The Chevron: > -->
+  <path d="M 216 278 L 268 308 L 216 338"
+    fill="none"
+    stroke="#10b981"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#glowEffect)"
+  />
+
+  <!-- The Terminal Cursor / Hash Underscore: _ -->
+  <line x1="284" y1="338" x2="318" y2="338"
+    stroke="#06b6d4"
+    stroke-width="8"
+    stroke-linecap="round"
+    filter="url(#glowEffect)"
+  />
+
+  <!-- Stylized Cryptographic Keyhole & Matrix Accent -->
+  <circle cx="256" cy="148" r="6" fill="#34d399" filter="url(#glowEffect)" />
+  <circle cx="256" cy="148" r="14" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 4" />
+
+  <!-- Binary / Security Code Accents -->
+  <g font-family="Courier, monospace" font-size="12" fill="#06b6d4" opacity="0.4" font-weight="bold">
+    <text x="148" y="328">01</text>
+    <text x="340" y="328">10</text>
+    <text x="238" y="375">0x73</text>
+  </g>
+</svg>

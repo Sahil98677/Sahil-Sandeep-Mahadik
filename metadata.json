@@ -1,0 +1,8 @@
+{
+  "name": "Remix Sahil",
+  "description": "A minimalist portfolio website template featuring a clean layout and an integrated contact form for professionals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

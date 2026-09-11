@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="v3Bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#090d18" />
+      <stop offset="70%" stop-color="#03060c" />
+      <stop offset="100%" stop-color="#010204" />
+    </radialGradient>
+
+    <!-- Hot Neon Purple to Toxic Cyan -->
+    <linearGradient id="cyberSynth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f59b" />
+      <stop offset="50%" stop-color="#00e5ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f59b" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="neonFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" />
+    </filter>
+  </defs>
+
+  <!-- Base Squircle -->
+  <rect width="512" height="512" rx="120" fill="url(#v3Bg)" />
+  <rect width="504" height="504" x="4" y="4" rx="116" fill="none" stroke="url(#cyberSynth)" stroke-width="2" stroke-opacity="0.25" />
+
+  <!-- Ambient Glow -->
+  <circle cx="256" cy="256" r="140" fill="#00e5ff" opacity="0.1" filter="url(#softGlow)" />
+
+  <!-- Cyber Glitch Ring -->
+  <circle cx="256" cy="256" r="185" fill="none" stroke="#00f59b" stroke-width="1.5" stroke-dasharray="20 10 50 15 5 5 80 20" opacity="0.4" />
+  <circle cx="256" cy="256" r="155" fill="none" stroke="#00e5ff" stroke-width="1" stroke-dasharray="8 8" opacity="0.25" />
+
+  <!-- Cyber Ninja / Katana X-Wing Mask -->
+  <g filter="url(#neonFilter)">
+    <!-- Central Crest / Horn -->
+    <polygon points="256,76 278,136 256,156 234,136" fill="#00f59b" />
+    
+    <!-- Left Wing Blade -->
+    <polygon points="234,136 128,172 108,244 192,234 238,188" fill="#0f172a" stroke="#00f59b" stroke-width="2" />
+    <polygon points="108,244 86,316 168,284 192,234" fill="#090d16" stroke="#00e5ff" stroke-width="1.5" />
+
+    <!-- Right Wing Blade -->
+    <polygon points="278,136 384,172 404,244 320,234 274,188" fill="#0f172a" stroke="#00f59b" stroke-width="2" />
+    <polygon points="404,244 426,316 344,284 320,234" fill="#090d16" stroke="#00e5ff" stroke-width="1.5" />
+
+    <!-- Center Mask Armor -->
+    <polygon points="256,156 294,204 256,252 218,204" fill="#040711" stroke="#00e5ff" stroke-width="2" />
+
+    <!-- Glowing Cyber Eyes / Dual Terminal Angled Slots -->
+    <polygon points="208,212 244,220 236,230 198,220" fill="#00f59b" />
+    <polygon points="304,212 268,220 276,230 314,220" fill="#00e5ff" />
+
+    <!-- Lower Respirator / Triangular Glitch Jaw -->
+    <polygon points="256,260 306,290 286,376 256,418 226,376 206,290" fill="#0b1120" stroke="url(#cyberSynth)" stroke-width="3" />
+
+    <!-- Jaw Data Vents -->
+    <line x1="234" y1="324" x2="278" y2="324" stroke="#00f59b" stroke-width="2.5" stroke-dasharray="6 4" />
+    <line x1="240" y1="344" x2="272" y2="344" stroke="#00e5ff" stroke-width="2.5" stroke-dasharray="6 4" />
+    <line x1="248" y1="364" x2="264" y2="364" stroke="#8b5cf6" stroke-width="2.5" />
+
+    <!-- Central Lock Cipher Icon -->
+    <circle cx="256" cy="204" r="5" fill="#ffffff" />
+  </g>
+
+  <!-- Circuit nodes -->
+  <g stroke="#00f59b" stroke-width="2" opacity="0.6">
+    <line x1="256" y1="418" x2="256" y2="460" />
+    <circle cx="256" cy="460" r="4" fill="#00e5ff" />
+    <line x1="128" y1="172" x2="80" y2="152" />
+    <circle cx="80" cy="152" r="4" fill="#00f59b" />
+    <line x1="384" y1="172" x2="432" y2="152" />
+    <circle cx="432" cy="152" r="4" fill="#00e5ff" />
+  </g>
+</svg>
