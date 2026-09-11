@@ -4,7 +4,6 @@ import {
   Sun, 
   Moon, 
   FileText, 
-  Edit3, 
   Menu, 
   X, 
   Send, 
@@ -140,18 +139,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <div className="h-4 w-px bg-zinc-300/80 dark:bg-zinc-800 mx-0.5" />
 
-          {/* Edit Profile trigger */}
-          <button
-            id="btn-edit-profile"
-            onClick={onOpenEditProfile}
-            title="Customize portfolio details"
-            aria-label="Edit portfolio details"
-            className="h-8.5 px-2.5 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-zinc-100 bg-zinc-200/70 dark:bg-zinc-900 hover:bg-zinc-300/70 dark:hover:bg-zinc-800 rounded-lg transition-colors text-xs flex items-center gap-1.5 border border-zinc-300/80 dark:border-zinc-800 shadow-2xs cursor-pointer"
-          >
-            <Edit3 className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
-            <span className="hidden xl:inline font-medium">Edit</span>
-          </button>
-
           {/* Theme Toggle */}
           <button
             id="btn-toggle-theme"
@@ -239,16 +226,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <FileText className="w-4 h-4" />
               <span>View Resume / CV</span>
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenEditProfile();
-              }}
-              className="w-full py-2 px-3 text-sm text-center font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900 rounded-lg flex items-center justify-center gap-2"
-            >
-              <Edit3 className="w-4 h-4" />
-              <span>Customize Profile</span>
             </button>
             <a
               href="#contact"
